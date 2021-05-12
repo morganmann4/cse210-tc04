@@ -1,15 +1,5 @@
-class Dealer:
-
-    def __init__(self):
-        #dealer attributes
-
-        self.cards = []
-
-    def show_card(self):
-
-
-
-
+#import Morgan's class
+from dealer.py import Dealer
 
 class Player:
 
@@ -19,6 +9,14 @@ class Player:
         self.points = 300
 
     def make_guess(self):
+        guess = input("Enter higher or lower")
+        return guess
         
 
     def add_or_sub_points(self):
+        if guess == True:
+            self.points = points + 100
+        else:
+            self.points = points - 75
+        return self.points 
+    

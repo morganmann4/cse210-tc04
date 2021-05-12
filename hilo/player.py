@@ -13,10 +13,12 @@ class Player:
         return guess
         
 
-    def add_or_sub_points(self):
-        if guess == True:
-            self.points = points + 100
+    def add_or_sub_points(self, correct):
+
+        if correct == True:
+            self.points = self.points + 100
         else:
-            self.points = points - 75
-        return self.points 
-    
+            self.points = self.points - 75
+
+    def get_points(self):
+        return self.points  

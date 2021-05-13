@@ -1,4 +1,3 @@
-#import Morgan's class
 from dealer.py import Dealer
 
 class Player:
@@ -7,18 +6,21 @@ class Player:
         #player attributes
 
         self.points = 300
+        self.guess = None
+        self.dealer = Dealer()
 
     def make_guess(self):
-        guess = input("Enter higher or lower")
+        self.guess = input("Higher or Lower? [h/l]")
         return guess
         
+        
+    def add_or_sub_points(self):
 
-    def add_or_sub_points(self, correct):
-
-        if correct == True:
+        if self.dealer.check_guess():
             self.points = self.points + 100
         else:
             self.points = self.points - 75
+        return points
 
     def get_points(self):
         return self.points  

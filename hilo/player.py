@@ -1,4 +1,3 @@
-from dealer.py import Dealer
 
 class Player:
 
@@ -6,21 +5,38 @@ class Player:
         #player attributes
 
         self.points = 300
-        self.guess = None
-        self.dealer = Dealer()
+        
 
     def make_guess(self):
-        self.guess = input("Higher or Lower? [h/l]")
+        guess = input("Higher or Lower? [h/l]")
         return guess
         
         
-    def add_or_sub_points(self):
+    def add_or_sub_points(self, correct):
 
-        if self.dealer.check_guess():
+        if correct:
             self.points = self.points + 100
         else:
             self.points = self.points - 75
+        points = self.points
         return points
+    
+    def can_play(self):
+        
+        if self.points > 0:
+            return self.play_again()
+        else:
+            print("Tha-the-that..that's all folks")
+            return False
 
-    def get_points(self):
-        return self.points  
+    def play_again(self):
+        answer = input("Do you want to play again? (Y/N) ")
+        if answer == "Y":
+            
+            return True
+
+        else:
+            print("Tha-the-that..that's all folks")
+            
+            return False
+ 

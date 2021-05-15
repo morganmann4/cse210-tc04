@@ -22,6 +22,6 @@ def test_add_or_sub_points():
     player.points = testPoints
     assert player.add_or_sub_points(False) == testPoints - 75
     
-
+#calls test functions when main is called
 pytest.main(["-v", "--tb=no", "w4pytest.py"])
 
